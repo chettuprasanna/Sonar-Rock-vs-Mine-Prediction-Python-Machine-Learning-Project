@@ -1,99 +1,82 @@
-# Sonar-Rock-vs-Mine-Prediction-Python-Machine-Learning-Project
-create a beginner project using Python Machine Learning Project
+# Sonar Rock vs Mine Classification  
+A Machine Learning project that classifies sonar signals as **Rock (R)** or **Mine (M)** using multiple ML models and ensemble techniques.  
+This project uses the **Sonar Dataset from UCI Machine Learning Repository**, which contains 60 frequency-based features extracted from sonar signals.
 
-Overview
+---
 
-This project is a binary classification problem where the goal is to predict whether a sonar signal has bounced off a metal cylinder (Mine) or a rock under the sea.
-It is based on the Sonar Dataset (UCI Machine Learning Repository) and uses machine learning algorithms to classify sonar signals accurately.
+## 📌 Project Objective
+To build and compare multiple machine learning models that predict whether a sonar signal has bounced off **a metal mine** or **a naturally occurring rock**.
 
-📂 Dataset Information
+---
 
-Source: UCI Machine Learning Repository – Sonar Dataset
+## 📂 Dataset Information
+- **Dataset Name:** Sonar Mines vs Rocks  
+- **Samples:** 208  
+- **Features:** 60 numerical sonar frequencies  
+- **Target Labels:**  
+  - **R** → Rock  
+  - **M** → Mine  
 
-Samples: 208 sonar signals
+Each feature represents the energy reflected at a particular sonar frequency.
 
-Features: 60 numeric features (frequency energy values of sonar signals)
+---
 
-Target Labels:
+## 🧠 Machine Learning Workflow
 
-R → Rock
+### 1. **Data Preprocessing**
+- Loaded dataset using pandas  
+- Separated features (X) and target (y)  
+- Label Encoded target values (R → 0, M → 1)  
+- Train-test split (80% training, 20% testing)  
+- Standardization (where required)
 
-M → Mine
+---
 
-Each feature represents the energy within a frequency band (0–60). The label indicates the object the sonar signal bounced off.
+### 2. **Models Trained**
+This project includes the training of **multiple ML models**, including:
 
-⚙️ Project Workflow
+- Logistic Regression  
+- Support Vector Machine (SVM)  
+- K-Nearest Neighbors (KNN)  
+- Decision Tree  
+- Random Forest  
+- Naive Bayes  
+- AdaBoost  
+- Bagging Classifier  
+- Gradient Boosting  
+- XGBoost  
+- Voting Classifier (Ensemble)
 
-Data Collection → Load sonar dataset.
+All models were trained, tested, and evaluated on the same dataset for fair comparison.
 
-Data Preprocessing → Handle features and target labels.
+---
 
-Exploratory Data Analysis (EDA) → Visualize distributions & correlations.
+## 📊 Evaluation Metrics
+For each model, the following metrics were generated:
 
-Train/Test Split → Divide dataset for training & testing.
+- Accuracy  
+- Confusion Matrix  
+- Classification Report (Precision, Recall, F1-Score)
 
-Model Training → Train ML models like:
+A final **comparison table** summarizing all model accuracies is included in the notebook.
 
-Logistic Regression
+---
 
-Support Vector Machine (SVM)
+## 📈 Visualizations
+The project includes:
+- Confusion matrices for every model  
+- PCA 2D Scatter Plot  
+- Final accuracy comparison  
+- Ensemble model comparison  
 
-Random Forest
+---
 
-KNN (K-Nearest Neighbors)
-
-Model Evaluation → Check accuracy, confusion matrix, and classification report.
-
-Prediction System → Build a function that predicts Rock or Mine for a new input.
-
-🛠️ Technologies Used
-
-Programming Language: Python
-
-Libraries:
-
-pandas, numpy → Data handling
-
-matplotlib, seaborn → Visualization
-
-scikit-learn → ML models & evaluation
-
-🚀 How to Run the Project
-
-Clone the repository:
-
-git clone https://github.com/your-username/Sonar-Rock-vs-Mine-Prediction-Python-Machine-Learning-Project.git
-cd Sonar-Rock-vs-Mine-Prediction-Python-Machine-Learning-Project
-
-
-Install dependencies:
-
-pip install -r requirements.txt
-
-
-Run the main script:
-
-python sonar_prediction.py
-
-📊 Example Output
-Enter sonar signal values → [0.02, 0.03, ..., 0.90]  
-Prediction: 🚨 Mine detected!
-
-
-or
-
-Prediction: 🪨 Rock detected!
-
-📈 Results
-
-Models achieve accuracy between 80%–90% depending on algorithm & tuning.
-
-SVM and Logistic Regression often give the best performance.
-
-📌 Applications
-
-Defense: Detecting naval mines.
-
-Marine Exploration: Identifying rocks or underwater structures.
-
-Signal Processing Research: Benchmark dataset for classification tasks
+## 📁 Project Structure
+📦 Sonar-Classification-Project
+├── sonar.csv
+├── Sonar_Classification.ipynb
+├── README.md
+└── results/
+├── confusion_matrices/
+├── accuracy_table.csv
+└── pca_plot.png
